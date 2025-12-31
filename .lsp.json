@@ -1,0 +1,28 @@
+{
+  "luau": {
+    "command": "luau-lsp",
+    "args": [
+      "lsp"
+    ],
+    "extensionToLanguage": {
+      ".lua": "luau",
+      ".luau": "luau"
+    },
+    "initializationOptions": {
+      "platform": {
+        "type": "roblox"
+      },
+      "types": {
+        "roblox": true,
+        "robloxSecurityLevel": "PluginSecurity"
+      },
+      "diagnostics": {
+        "strictDatamodelTypes": true
+      }
+    },
+    "settings": {},
+    "startupTimeout": 5000,
+    "restartOnCrash": true,
+    "maxRestarts": 3
+  }
+}

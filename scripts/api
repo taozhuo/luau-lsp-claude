@@ -1,0 +1,30 @@
+#!/bin/bash
+# Quick API lookup for Luau/Roblox
+# Usage: ./api <search_term>
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+
+if [ -z "$1" ]; then
+    echo "Usage: api <search_term>"
+    echo ""
+    echo "Examples:"
+    echo "  api Raycast"
+    echo "  api TweenService"
+    echo "  api Humanoid.MoveTo"
+    exit 1
+fi
+
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "🔍 Looking up: $1"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+echo ""
+echo "📝 TYPE SIGNATURE:"
+echo "──────────────────────────────────────────────────────────────"
+grep -i "function $1\|$1:" "$PROJECT_DIR/globalTypes.d.luau" | head -5
+
+echo ""
+echo "📖 DOCUMENTATION:"
+echo "──────────────────────────────────────────────────────────────"
+python3 "$SCRIPT_DIR/lookup-api.py" "$1" 2>/dev/null | head -40
