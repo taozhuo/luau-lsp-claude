@@ -45,18 +45,26 @@ Download from [GitHub Releases](https://github.com/JohnnyMorganz/luau-lsp/releas
 
 ### Installing the Plugin
 
-#### Option 1: Test locally (development)
+#### Option 1: Using Claude Code Plugin Command (Recommended)
 ```bash
-git clone https://github.com/anthropics/luau-lsp-plugin.git
-cd luau-lsp-plugin
-claude --plugin-dir .
+# Add the marketplace
+/plugin marketplace add taozhuo/luau-lsp-claude
+
+# Install the plugin
+/plugin install luau-lsp
 ```
 
-#### Option 2: Install permanently
+#### Option 2: Direct Repository Installation
 ```bash
-git clone https://github.com/anthropics/luau-lsp-plugin.git ~/.claude/plugins/cache/local/luau-lsp
+/plugin marketplace add https://github.com/taozhuo/luau-lsp-claude.git
+/plugin install luau-lsp
+```
 
-# Add to installed_plugins.json and settings.json (see Configuration section)
+#### Option 3: Test locally (development)
+```bash
+git clone https://github.com/taozhuo/luau-lsp-claude.git
+cd luau-lsp-claude
+claude --plugin-dir .
 ```
 
 ## Configuration

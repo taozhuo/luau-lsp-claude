@@ -1,0 +1,26 @@
+{
+  "name": "luau-lsp-marketplace",
+  "owner": {
+    "name": "Zhuo Tao",
+    "url": "https://github.com/taozhuo"
+  },
+  "metadata": {
+    "description": "Luau Language Server support for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "luau-lsp",
+      "source": "./",
+      "description": "Luau/Roblox language server support - provides type checking, hover documentation, go-to-definition, and more",
+      "version": "1.0.0",
+      "author": {
+        "name": "Zhuo Tao",
+        "url": "https://github.com/taozhuo"
+      },
+      "homepage": "https://github.com/taozhuo/luau-lsp-claude",
+      "repository": "https://github.com/taozhuo/luau-lsp-claude",
+      "license": "MIT",
+      "keywords": ["luau", "roblox", "lsp", "language-server", "claude-code"]
+    }
+  ]
+}
